@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Teachers Day</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <style>
+      .teacher-name-styles {
+        font-family: cursive;
+      }
+    </style>
+  </head>
+  <body data-bs-theme="dark">
+    <div class="container">
+      <div class="mt-2">
+        <h2 class="justify-content-center align-items-center">
+          Hearty Welcome to all the teachers 😃
+        </h2>
+      </div>
+      <form class="form mt-4">
+        <div class="mb-3">
+          <label for="teacherNameTextBox" class="form-label">
+            <h5><i>Students call you - </i></h5>
+          </label>
+          <input type="text" class="form-control" id="teacherNameTextBox" />
+        </div>
+        <button type="button" class="btn btn-primary" onclick="onSubmit()">
+          Surprise Me !
+        </button>
+      </form>
+      <div
+        class="d-flex justify-content-center align-items-center flex-column"
+        id="surprise"
+      >
+        <div class="my-2">
+          <i><h6>Sorry for the late wishes. Here is my imposition 🌝 -</h6></i>
+        </div>
+        <div id="wishes"></div>
+        <small class="mt-2">Please stop counting... It's 100 times 🤭</small>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("surprise").style.visibility = "hidden";
+      function onSubmit() {
+        let teacherName = document.getElementById("teacherNameTextBox").value;
+        if (teacherName.trim() == "") {
+          alert("Please enter your name :");
+          return;
+        }
+        let wishesPart = "";
+        let i = 0;
+        do {
+          wishesPart =
+            wishesPart +
+            `<p> <h4>Happy Teachers Day <span class="teacher-name-styles">` +
+            teacherName +
+            ` 🙏 </span></h4></p>`;
+          i++;
+        } while (i < 100);
+
+        document.getElementById("wishes").innerHTML = wishesPart;
+        document.getElementById("surprise").style.visibility = "visible";
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
