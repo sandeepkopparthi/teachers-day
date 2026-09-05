@@ -67,8 +67,15 @@
 
         document.getElementById("wishes").innerHTML = wishesPart;
         document.getElementById("surprise").style.visibility = "visible";
+         confetti({
+          particleCount: 250, // Number of confetti pieces to launch
+          spread: 70, // How wide the burst expands (in degrees)
+          origin: { y: 1 }, // Slightly lower down the screen (0 is top, 1 is bottom)
+        });
       }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+    <script
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
